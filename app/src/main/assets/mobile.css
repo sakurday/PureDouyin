@@ -1,0 +1,82 @@
+/* Rules are scoped to the feed. Unknown pages retain the original desktop layout. */
+html.pd-mobile, html.pd-mobile body, html.pd-mobile #root,
+html.pd-mobile #dark, html.pd-mobile #douyin-right-container {
+  min-width: 0 !important; width: 100% !important; margin: 0 !important;
+}
+html.pd-mobile, html.pd-mobile body { overflow: hidden !important; background: #000 !important; }
+html.pd-mobile [data-e2e="douyin-navigation"],
+html.pd-mobile #douyin-header { display: none !important; }
+html.pd-mobile #douyin-right-container { padding: 0 !important; }
+html.pd-mobile #dark { display: block !important; }
+html.pd-mobile [data-pd-sidebar] { display: none !important; }
+html.pd-mobile [data-pd-layout] {
+  min-width: 0 !important; width: 100% !important; height: 100% !important;
+  margin: 0 !important; padding: 0 !important; overflow: visible !important;
+}
+html.pd-mobile #slidelist {
+  position: fixed !important; inset: 0 !important; width: 100vw !important;
+  height: 100dvh !important; min-height: 0 !important; padding: 0 !important;
+  margin: 0 !important; border-radius: 0 !important; z-index: 10 !important;
+}
+html.pd-mobile [data-e2e="slideList"] { width: 100% !important; height: 100% !important; }
+html.pd-mobile [data-e2e="feed-item"] {
+  /* Keep the site's slide height and gap: its translate offset depends on both. */
+  width: 100vw !important; flex-shrink: 0 !important;
+}
+html.pd-mobile [data-pd-fill] {
+  width: 100% !important; height: 100% !important; min-width: 0 !important;
+  max-width: none !important; margin: 0 !important; border-radius: 0 !important;
+}
+html.pd-mobile .douyin-player-video-container { inset: 0 !important; height: 100% !important; }
+html.pd-mobile .douyin-player-video-container video {
+  width: 100% !important; height: 100% !important; object-fit: contain !important;
+}
+html.pd-mobile [data-pd-actions] {
+  position: absolute !important; right: 7px !important; left: auto !important;
+  bottom: 132px !important; top: auto !important; width: 48px !important;
+  height: fit-content !important; max-height: none !important; z-index: 30 !important;
+  display: block !important; transform: none !important;
+}
+html.pd-mobile [data-pd-actions] > div {
+  display: flex !important; flex-direction: column !important; gap: 12px !important;
+  width: 48px !important; height: auto !important; margin: 0 !important;
+  position: relative !important; top: auto !important; bottom: auto !important; transform: none !important;
+}
+html.pd-mobile [data-pd-actions] > div > div {
+  margin: 0 !important; height: auto !important; min-height: 42px !important;
+}
+html.pd-mobile [data-pd-actions] [data-e2e="video-avatar"],
+html.pd-mobile [data-pd-actions] [data-e2e="live-avatar"] {
+  display: block !important; width: 38px !important; height: 38px !important;
+  min-width: 0 !important; margin: 0 auto !important;
+}
+html.pd-mobile [data-pd-actions] [data-e2e="feed-follow-icon"] { width: 38px !important; margin: 0 auto !important; }
+html.pd-mobile [data-pd-actions] [data-e2e="video-player-digg"],
+html.pd-mobile [data-pd-actions] [data-e2e="feed-comment-icon"],
+html.pd-mobile [data-pd-actions] [data-e2e="video-player-collect"],
+html.pd-mobile [data-pd-actions] [data-e2e="video-player-share"] {
+  min-width: 44px !important; width: 48px !important; height: auto !important;
+  min-height: 44px !important; margin: 0 !important; font-size: 11px !important;
+  line-height: 16px !important; text-align: center !important;
+}
+html.pd-mobile [data-pd-actions] svg { width: 29px !important; height: 29px !important; }
+html.pd-mobile [data-pd-actions] p, html.pd-mobile [data-pd-actions] span {
+  font-size: 11px !important; line-height: 16px !important;
+}
+html.pd-mobile [data-pd-action-extra] { display: none !important; }
+html.pd-mobile [data-pd-info] {
+  position: absolute !important; left: 12px !important; right: 68px !important;
+  bottom: 58px !important; top: auto !important; width: auto !important;
+  max-height: 150px !important; overflow: auto !important; z-index: 25 !important;
+  text-shadow: 0 1px 4px #000 !important;
+}
+html.pd-mobile [data-pd-info] [data-e2e="video-info"] { padding: 0 !important; width: auto !important; }
+html.pd-mobile [data-pd-info] [data-e2e="feed-video-nickname"] {
+  font-size: 15px !important; line-height: 22px !important; font-weight: 600 !important;
+}
+html.pd-mobile [data-pd-info] [data-e2e="video-desc"] {
+  font-size: 13px !important; line-height: 20px !important;
+}
+html.pd-mobile [data-e2e="video-switch-prev-arrow"],
+html.pd-mobile [data-e2e="video-switch-next-arrow"] { visibility: hidden !important; }
+/* Comment presentation is owned by Douyin's responsive UI. */

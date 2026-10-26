@@ -1,0 +1,27 @@
+/* SPDX-License-Identifier: GPL-3.0-only
+ * Adapted from WhiteSevs, Douyin Optimization 2026.10.23,
+ * changeCommentToBottom(). See THIRD_PARTY_NOTICES.md.
+ * This repositions the original website panel; it creates no comment UI.
+ */
+@media screen and (orientation: portrait) {
+  html.pd-mobile [data-e2e="feed-video"] #videoSideBar #relatedVideoCard,
+  html.pd-mobile [data-e2e="feed-video"] #videoSideCard #relatedVideoCard {
+    display: none !important;
+  }
+  html.pd-mobile [data-e2e="feed-active-video"] #videoSideBar:has(#relatedVideoCard),
+  html.pd-mobile [data-e2e="feed-active-video"] #videoSideCard:has(#relatedVideoCard) {
+    /* Keep width non-important so the website's closed-state width:0 wins. */
+    width: 100%;
+    height: min(75%, calc(100dvh - 48px));
+    left: 0;
+    right: 0;
+    /* Keep the input visible when the keyboard reduces the WebView height. */
+    bottom: max(0px, calc(100% - 100dvh));
+    top: auto;
+    position: absolute;
+    z-index: 60;
+    background: rgba(20,23,29,.97);
+    border-radius: 16px 16px 0 0;
+    transition: height .15s linear !important;
+  }
+}
